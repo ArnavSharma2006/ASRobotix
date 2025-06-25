@@ -38,7 +38,7 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-3xl mx-auto px-4">
-              Our microbots can roll and connect from any side, forming shapes and structures without human
+              Our Atomites can roll and connect from any side, forming shapes and structures without human
               intervention. They move unpredictably, without wheels or complicated commands, relying on simple, elegant
               design and teamwork.
             </p>
@@ -52,7 +52,7 @@ export function HeroSection() {
                 Watch Demo
               </Button>
               <Button 
-                className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2"
+                className="bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2"
                 onClick={scrollToProjects}
               >
                 Explore Projects
@@ -67,21 +67,21 @@ export function HeroSection() {
                 <div className="flex justify-center order-2 lg:order-1">
                   <div className="relative">
                     <Image
-                      src="/placeholder.svg?height=400&width=400"
-                      alt="ASRobotix Microbots in Formation"
+                      src="/Microbot2.jpg"
+                      alt="ASRobotix Atomites in Formation"
                       width={400}
                       height={400}
                       className="rounded-xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white text-sm font-medium">Microbots forming autonomous structures</p>
+                      <p className="text-white text-sm font-medium">Atomites forming autonomous structures</p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
                   <div className="bg-white/5 p-4 sm:p-6 rounded-xl border border-white/10 card-hover border-hover">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-4">Current Capabilities</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-4">Currently Working On</h3>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-red-500"></div>

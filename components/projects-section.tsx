@@ -23,12 +23,12 @@ export function ProjectsSection() {
       link: "/mechlid",
     },
     {
-      title: "Mini Robots",
-      subtitle: "Collaborative Microbot Swarms",
+      title: "Atomites",
+      subtitle: "Collaborative Atomite Swarms",
       description:
         "Eraser-sized robots that communicate with each other and form adaptable shapes with breakthrough potential.",
       status: "Active Development",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Microbot1.jpg",
       color: "from-orange-500 to-red-600",
       link: "/minirobots",
     },
@@ -44,7 +44,7 @@ export function ProjectsSection() {
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Breakthrough Projects</h2>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto text-sm sm:text-base">
           Our innovative projects are pushing the boundaries of robotics, from smart waste management to collaborative
-          microbot swarms.
+          Atomite swarms.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

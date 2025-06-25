@@ -25,7 +25,7 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-gray-400 mb-6">
-              Pioneering the future of collaborative robotics with breakthrough microbot technology.
+              Pioneering the future of collaborative robotics with breakthrough Atomite technology.
             </p>
             <div className="flex gap-4">
               <Link
@@ -66,7 +66,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/minirobots" className="text-gray-400 hover:text-white">
-                  Microbots
+                  Atomites
                 </Link>
               </li>
               <li>

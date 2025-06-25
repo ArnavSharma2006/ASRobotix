@@ -4,7 +4,7 @@ export function TechnologySection() {
   const technologies = [
     {
       title: "Autonomous Connection",
-      description: "Microbots can connect from any side without human intervention, forming complex structures",
+      description: "Atomites can connect from any side without human intervention, forming complex structures",
       icon: <Network className="h-6 w-6 text-red-500" />,
     },
     {

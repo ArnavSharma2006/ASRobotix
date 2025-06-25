@@ -47,42 +47,47 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "Arnav Sharma",
-      role: "Founder & CEO",
+      role: "Founder",
       image: "/team-members/Arnav Sharma.jpg"
     },
     {
       name: "Saksham Kamboj",
-      role: "Co-Founder & CTO",
+      role: "Co-Founder",
       image: "/team-members/Saksham Kamboj.jpg"
     },
     {
       name: "Ishaan Kesarwani",
-      role: "Software Engineer",
+      role: "Developer",
       image: "/team-members/Ishaan kesarwani.png"
     },
     {
       name: "Taanish Gupta",
-      role: "Hardware Engineer",
+      role: "Embedded Systems & Logic Control Engineer",
       image: "/team-members/Taanish Gupta.jpg"
     },
     {
       name: "Ridhi Sehgal",
-      role: "UI/UX Designer",
+      role: "UI/UX & Graphic Designer",
       image: "/team-members/Ridhi Sehgal.jpg"
     },
     {
       name: "Tanishka Gupta",
-      role: "Research Engineer",
+      role: "Electronic Systems Developer",
       image: "/team-members/Tanishka Gupta.png"
     },
     {
       name: "Kartikay Lakhotia",
-      role: "Robotics Engineer",
+      role: "Product development engineer",
       image: "/team-members/Kartikay Lakhotia.png"
     },
     {
+      name: "Soham Jain",
+      role: "Mechanical Systems and Scalability Engineer",
+      image: "/team-members/Soham Jain.jpg"
+    },
+    {
       name: "Manit Mehta",
-      role: "Software Developer",
+      role: "Mechanical Systems & Design Engineer",
       image: "/team-members/Manit Mehta.jpg"
     }
   ]
@@ -136,7 +141,7 @@ export default function AboutPage() {
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">About ASRobotix</h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               A group of robotics enthusiasts taking on breakthrough projects and innovating for the world. Driven by a
-              big dream, our small team is committed to changing how we build, explore, and heal, one microbot at a
+              big dream, our small team is committed to changing how we build, explore, and heal, one Atomite at a
               time.
             </p>
           </div>
@@ -151,7 +156,7 @@ export default function AboutPage() {
             A lean team that consists of the brightest minds of India hailing from premier institutions worldwide.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-3 gap-8 mb-16">
             {teamMembers.map((member) => (
               <div key={member.name} className="neumorphism rounded-xl p-6">
                 <div className="text-center">

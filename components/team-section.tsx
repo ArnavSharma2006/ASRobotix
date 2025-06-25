@@ -48,7 +48,7 @@ export function TeamSection() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Innovation Driven</h3>
               <p className="text-gray-400">
-                Committed to changing how we build, explore, and heal, one microbot at a time.
+                Committed to changing how we build, explore, and heal, one Atomite at a time.
               </p>
             </div>
           </div>

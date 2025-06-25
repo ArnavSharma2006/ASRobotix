@@ -2,13 +2,14 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import type React from "react"
+import { AppWrapper } from "@/components/app-wrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "ASRobotix - Pioneering Collaborative Microbot Technology",
+  title: "ASRobotix - Pioneering Collaborative Atomite Technology",
   description:
-    "Creating tiny robots that think and collaborate. Building the future of autonomous robotics, one microbot at a time.",
+    "Creating tiny robots that think and collaborate. Building the future of autonomous robotics, one Atomite at a time.",
     generator: 'v0.dev'
 }
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white antialiased`}>{children}</body>
+      <body className={`${inter.className} bg-black text-white antialiased`}>
+        <AppWrapper>{children}</AppWrapper>
+      </body>
     </html>
   )
 }

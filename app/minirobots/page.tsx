@@ -14,7 +14,7 @@ export default function MiniRobotsPage() {
     {
       icon: <Network className="h-6 w-6 text-red-500" />,
       title: "Inter-robot Communication",
-      description: "Advanced protocols enable seamless communication between individual microbots",
+      description: "Advanced protocols enable seamless communication between individual Atomites",
     },
     {
       icon: <Brain className="h-6 w-6 text-orange-500" />,
@@ -67,7 +67,7 @@ export default function MiniRobotsPage() {
 
   const handleJoinResearch = () => {
     window.location.href =
-      "mailto:research@asrobotix.com?subject=Mini Robots Research Program&body=Hi, I'm interested in joining the Mini Robots research program."
+      "mailto:research@asrobotix.com?subject=Atomites Research Program&body=Hi, I'm interested in joining the Atomites research program."
   }
 
   const handleTechnicalDocs = () => {
@@ -75,7 +75,7 @@ export default function MiniRobotsPage() {
   }
 
   const handleContactResearch = () => {
-    window.location.href = "mailto:research@asrobotix.com?subject=Mini Robots Research Inquiry"
+    window.location.href = "mailto:research@asrobotix.com?subject=Atomites Research Inquiry"
   }
 
   const handleResearchCollaboration = () => {
@@ -103,17 +103,17 @@ export default function MiniRobotsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <h1 className="text-4xl sm:text-5xl font-bold">Mini Robots</h1>
+                    <h1 className="text-4xl sm:text-5xl font-bold">Atomites</h1>
                     <div className="flex items-center gap-1 px-3 py-1 bg-red-500/20 rounded-full">
                       <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                       <span className="text-sm text-red-500 font-medium">Active Development</span>
                     </div>
                   </div>
                   <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500 mb-6">
-                    Collaborative Microbot Swarms
+                    Collaborative Atomite Swarms
                   </p>
                   <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                    Our Mini Robots represent a breakthrough in collaborative robotics. These eraser-sized autonomous robots
+                    Our Atomites represent a breakthrough in collaborative robotics. These eraser-sized autonomous robots
                     can communicate with each other and form adaptable shapes and structures. They move unpredictably
                     without wheels or complicated commands, relying on elegant design and teamwork.
                   </p>
@@ -136,8 +136,8 @@ export default function MiniRobotsPage() {
 
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=500&width=600"
-                    alt="Mini Robots Collaborative Swarm"
+                    src="/Microbot1.jpg"
+                    alt="Atomites Collaborative Swarm"
                     width={600}
                     height={500}
                     className="rounded-xl w-full"
@@ -175,7 +175,7 @@ export default function MiniRobotsPage() {
           {/* How It Works */}
           <section className="py-16 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">How Mini Robots Work</h2>
+              <h2 className="text-3xl font-bold mb-12 text-center">How Atomites Work</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
                   <h3 className="text-2xl font-semibold mb-6">Revolutionary Design Principles</h3>

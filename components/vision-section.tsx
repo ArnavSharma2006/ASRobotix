@@ -6,7 +6,7 @@ export function VisionSection() {
     {
       icon: <Search className="h-8 w-8 text-red-500" />,
       title: "Disaster Response",
-      description: "Rapid deployment of microbot swarms for search and rescue operations in dangerous environments",
+              description: "Rapid deployment of Atomite swarms for search and rescue operations in dangerous environments",
       color: "from-red-500 to-red-600",
     },
     {
@@ -35,7 +35,7 @@ export function VisionSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Vision for the Future</h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-sm sm:text-base">
-            We envision a future where swarms of intelligent microbots revolutionize industries, from disaster response
+            We envision a future where swarms of intelligent Atomites revolutionize industries, from disaster response
             to construction, defense, and healthcare. Our goal is to push the boundaries of what small, intelligent
             machines can achieve together.
           </p>
