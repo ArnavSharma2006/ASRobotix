@@ -50,7 +50,7 @@ export function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
           src={videoUrl}
           controls
           autoPlay
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-black"
           poster="/placeholder.svg?height=450&width=800"
         >
           Your browser does not support the video tag.

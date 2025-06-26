@@ -36,7 +36,7 @@ export function Header() {
             MechLid
           </Link>
           <Link href="/minirobots" className="text-sm text-gray-300 hover:text-white transition-colors">
-            Mini Robots
+            Atomites
           </Link>
           <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
             About Us
@@ -91,7 +91,7 @@ export function Header() {
               className="text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Mini Robots
+              Atomites
             </Link>
             <Link
               href="/about"

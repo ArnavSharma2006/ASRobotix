@@ -282,7 +282,7 @@ export default function MiniRobotsPage() {
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Active Research & Development</h3>
                   <p className="text-gray-400 mb-6">
-                    Mini Robots are currently in active development phase. Our team is working on perfecting the
+                    Atomites are currently in active development phase. Our team is working on perfecting the
                     communication protocols, swarm algorithms, and mechanical design to achieve breakthrough performance in
                     collaborative robotics.
                   </p>
@@ -311,7 +311,7 @@ export default function MiniRobotsPage() {
               <h2 className="text-3xl font-bold mb-4">Join the Future of Robotics</h2>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
                 Be part of the breakthrough in collaborative robotics. Connect with our research team to learn more about
-                Mini Robots and potential collaboration opportunities.
+                Atomites and potential collaboration opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button

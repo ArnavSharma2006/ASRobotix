@@ -117,7 +117,7 @@ export default function AboutPage() {
 
   const achievements = [
     { number: "1", label: "Patent Application Filed", description: "MechLid smart waste management system" },
-    { number: "2", label: "Breakthrough Projects", description: "MechLid and Mini Robots in active development" },
+    { number: "2", label: "Breakthrough Projects", description: "MechLid and Atomites in active development" },
     { number: "4", label: "Premier Institutions", description: "Team members from top global universities" },
     { number: "50+", label: "Prototypes Tested", description: "Continuous iteration and improvement" },
   ]
