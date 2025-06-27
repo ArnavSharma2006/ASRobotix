@@ -18,7 +18,7 @@ export function ProjectsSection() {
         "An automatic smart lid aiding in efficient waste disposal and collection with retrofittable technology.",
       status: "Patent Published",
       patentNumber: "202311068504",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Mechlid2.jpg",
       color: "from-red-500 to-orange-600",
       link: "/mechlid",
     },

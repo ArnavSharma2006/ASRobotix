@@ -118,13 +118,67 @@ export default function MechLidPage() {
 
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=500&width=600"
+                    src="/Mechlid1.jpg"
                     alt="MechLid Smart Waste Management System"
                     width={600}
                     height={500}
                     className="rounded-xl w-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Image Gallery */}
+          <section className="py-16 px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4 text-center">MechLid in Action</h2>
+              <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                See our innovative smart waste management system from different angles and in various applications.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden rounded-xl">
+                  <Image
+                    src="/Mechlid1.jpg"
+                    alt="MechLid Smart Waste Management System - Overview"
+                    width={400}
+                    height={300}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white font-semibold mb-1">System Overview</h3>
+                    <p className="text-gray-300 text-sm">Complete MechLid installation on standard dustbin</p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden rounded-xl">
+                  <Image
+                    src="/Mechlid2.jpg"
+                    alt="MechLid Smart Waste Management System - Technical Details"
+                    width={400}
+                    height={300}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white font-semibold mb-1">Technical Details</h3>
+                    <p className="text-gray-300 text-sm">Close-up view of sensor technology and components</p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden rounded-xl">
+                  <Image
+                    src="/Mechlid3.jpg"
+                    alt="MechLid Smart Waste Management System - Application"
+                    width={400}
+                    height={300}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white font-semibold mb-1">Real Application</h3>
+                    <p className="text-gray-300 text-sm">MechLid deployed in urban environment</p>
+                  </div>
                 </div>
               </div>
             </div>
