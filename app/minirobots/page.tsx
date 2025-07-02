@@ -228,7 +228,7 @@ export default function MiniRobotsPage() {
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <h3 className="text-2xl font-semibold mb-6">Technical Specifications</h3>
                   <ShineBorder borderClassName="border border-white/10 rounded-xl">
                     <div className="p-6">
@@ -245,7 +245,7 @@ export default function MiniRobotsPage() {
                       </div>
                     </div>
                   </ShineBorder>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
@@ -286,7 +286,7 @@ export default function MiniRobotsPage() {
                     communication protocols, swarm algorithms, and mechanical design to achieve breakthrough performance in
                     collaborative robotics.
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                  {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                     <div>
                       <p className="text-2xl font-bold text-red-500">50+</p>
                       <p className="text-sm text-gray-400">Prototypes Tested</p>
@@ -299,7 +299,7 @@ export default function MiniRobotsPage() {
                       <p className="text-2xl font-bold text-yellow-500">5</p>
                       <p className="text-sm text-gray-400">Research Papers</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </ShineBorder>
             </div>
