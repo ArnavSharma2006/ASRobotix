@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              We're Robots That
+              Tiny Robots That
               <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
                 Think & Collaborate
