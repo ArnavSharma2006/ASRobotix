@@ -41,6 +41,9 @@ export function Header() {
           <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
             About Us
           </Link>
+          <Link href="/waitlist" className="text-sm text-gray-300 hover:text-white transition-colors">
+            Join Waitlist
+          </Link>
           <Link href="/#contact" className="text-sm text-gray-300 hover:text-white transition-colors">
             Contact
           </Link>
@@ -99,6 +102,13 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
+            </Link>
+            <Link
+              href="/waitlist"
+              className="text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Join Waitlist
             </Link>
             <Link
               href="/#contact"

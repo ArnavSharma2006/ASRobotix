@@ -4,9 +4,20 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
+import { useRouter, usePathname } from "next/navigation"
 
 export function Footer() {
+  const router = useRouter()
+  const pathname = usePathname()
+
   const scrollToSection = (id: string) => {
+    // If we're not on the home page, navigate to home page with the section
+    if (pathname !== "/") {
+      router.push(`/#${id}`)
+      return
+    }
+    
+    // If we're on the home page, scroll to the section
     const section = document.getElementById(id)
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
@@ -91,6 +102,11 @@ export function Footer() {
               <li>
                 <Link href="/about" className="text-gray-400 hover:text-white">
                   Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/waitlist" className="text-gray-400 hover:text-white">
+                  Join Waitlist
                 </Link>
               </li>
               <li>

@@ -1,0 +1,65 @@
+ASRobotix Website Color Scheme (Simple Explanation)
+==================================================
+
+Our website uses a modern, clean, and professional color palette. The main design is based on a dark background with bright, energetic accent colors (like red and orange) to make important buttons and sections stand out. We also use soft grays and whites for text and backgrounds to keep things easy to read. The design supports both light and dark modes, so it looks good in any lighting.
+
+Main Colors Used
+----------------
+
+1. **Background**
+   - What it is: The main color behind everything on the site.
+   - Light mode: White (#ffffff)
+   - Dark mode: Almost black (#0a0a0a)
+
+2. **Text (Foreground)**
+   - What it is: The main color for most text.
+   - Light mode: Very dark gray (#0a0a0a)
+   - Dark mode: White (#fafafa)
+
+3. **Primary Color (for buttons, highlights)**
+   - What it is: The main accent color, used for important buttons and highlights.
+   - Red (#ef4444)
+
+4. **Secondary Color (for secondary buttons, highlights)**
+   - What it is: A supporting accent color, used for less important buttons or highlights.
+   - Orange (#f97316)
+
+5. **Destructive (for warnings or errors)**
+   - What it is: Used for error messages or destructive actions.
+   - Light mode: Soft red (#f87171)
+   - Dark mode: Deep red (#992a2a)
+
+6. **Muted/Gray (for less important text or backgrounds)**
+   - What it is: Used for secondary text, borders, or backgrounds.
+   - Light mode: Light gray (#f5f5f5, #e5e5e5, #737373)
+   - Dark mode: Dark gray (#262626, #a2a2a2, #d4d4d4)
+
+7. **Accent (for special highlights)**
+   - What it is: Used for special highlights or backgrounds.
+   - Light mode: Light gray (#f5f5f5)
+   - Dark mode: Dark gray (#262626)
+
+8. **Borders and Inputs**
+   - What it is: Used for lines, input boxes, and card edges.
+   - Light mode: Very light gray (#e5e5e5)
+   - Dark mode: Dark gray (#262626)
+
+9. **Gradients**
+   - What it is: Used for backgrounds and buttons to add a modern, colorful effect.
+   - Main gradient: Red to orange (from #ef4444 to #f97316)
+   - Secondary gradient: Orange to yellow (from #f97316 to #eab308)
+
+10. **Special Effects**
+    - Neumorphism backgrounds: Very dark grays (#151515, #0d0d0d, #171717, #111111)
+    - Hero section: Soft red and orange glows (rgba(239,68,68,0.15), rgba(249,115,22,0.05))
+
+Other Common Colors
+-------------------
+- Yellow: #eab308 (for highlights)
+- Pink: #ec4899 (for some gradients)
+- Indigo: #6366f1 (for some icons or backgrounds)
+- Purple: #a21caf (for some icons or backgrounds)
+- White: #ffffff (for text or backgrounds)
+- Black: #000000 (for overlays or deep backgrounds)
+
+In summary, the website uses a dark base with bright red and orange for action, soft grays for balance, and gradients for a modern look. All color codes are chosen to be easy on the eyes and accessible. 
