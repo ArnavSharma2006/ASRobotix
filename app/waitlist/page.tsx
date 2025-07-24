@@ -11,6 +11,7 @@ import { InteractiveGrid } from "@/components/ui/interactive-grid"
 import { CheckCircle, Users, Zap, Clock, ArrowRight, Mail, Phone, Building } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
 export default function WaitlistPage() {
   const [formData, setFormData] = useState({
@@ -164,7 +165,7 @@ export default function WaitlistPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
+                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
                           placeholder="Your full name"
                         />
                       </div>
@@ -176,77 +177,85 @@ export default function WaitlistPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
+                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
                           placeholder="your.email@company.com"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Phone</label>
-                        <Input
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
-                          placeholder="+1 (555) 123-4567"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Company</label>
-                        <Input
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
-                          placeholder="Your company name"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Role</label>
-                      <Input
-                        name="role"
-                        value={formData.role}
-                        onChange={handleInputChange}
-                        className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
-                        placeholder="e.g., Engineer, Manager, Researcher"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Primary Interest Area</label>
-                      <select
-                        name="interest"
-                        value={formData.interest}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-white/10 text-white rounded-md px-3 py-2 focus:border-red-500 focus:outline-none"
-                      >
-                        <option value="">Select an area of interest</option>
-                        {interestAreas.map((area, index) => (
-                          <option key={index} value={area}>{area}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Message (Optional)</label>
-                      <Textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows={4}
-                        className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500"
-                        placeholder="Tell us more about your interest in our technology or any specific use cases you have in mind..."
-                      />
-                    </div>
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="optional-info">
+                        <AccordionTrigger className="rounded-lg bg-white/5 border border-white/10 px-4 py-2 text-left text-white font-medium hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                          Provide optional info
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-4 mt-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <div>
+                                <label className="block text-sm font-medium mb-2">Phone</label>
+                                <Input
+                                  name="phone"
+                                  value={formData.phone}
+                                  onChange={handleInputChange}
+                                  className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
+                                  placeholder="+1 (555) 123-4567"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium mb-2">Company</label>
+                                <Input
+                                  name="company"
+                                  value={formData.company}
+                                  onChange={handleInputChange}
+                                  className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
+                                  placeholder="Your company name"
+                                />
+                              </div>
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium mb-2">Role</label>
+                              <Input
+                                name="role"
+                                value={formData.role}
+                                onChange={handleInputChange}
+                                className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
+                                placeholder="e.g., Engineer, Manager, Researcher"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium mb-2">Primary Interest Area</label>
+                              <select
+                                name="interest"
+                                value={formData.interest}
+                                onChange={handleInputChange}
+                                className="w-full bg-white/5 border border-white/10 text-white rounded-lg px-3 py-2 focus:border-red-500 focus:outline-none"
+                              >
+                                <option value="">Select an area of interest</option>
+                                {interestAreas.map((area, index) => (
+                                  <option key={index} value={area}>{area}</option>
+                                ))}
+                              </select>
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium mb-2">Message </label>
+                              <Textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                rows={4}
+                                className="bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-red-500 rounded-lg"
+                                placeholder="Tell us more about your interest in our technology or any specific use cases you have in mind..."
+                              />
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2"
+                      className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2 rounded-lg"
                     >
                       {isSubmitting ? (
                         <>

@@ -46,10 +46,9 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 className="gap-2 border-white/10 bg-white/5 hover:bg-white/10"
-                onClick={handleWatchDemo}
+                onClick={() => window.location.href = '/waitlist'}
               >
-                <Play className="w-4 h-4" />
-                Watch Demo
+                Join Waitlist
               </Button>
               <Button 
                 className="bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2"
