@@ -89,6 +89,41 @@ export default function AboutPage() {
       name: "Manit Mehta",
       role: "Mechanical Systems & Design Engineer",
       image: "/team-members/Manit Mehta.jpg"
+    },
+    {
+      name: "Aakash Bhagat",
+      role: "Investor Relations and Operations",
+      image: "/team-members/Aakash Bhagat.jpg"
+    },
+    {
+      name: "Shashwat Mahalanobis",
+      role: "AI and Data Scientist",
+      image: "/team-members/Shashwat Mahalanobis.jpg"
+    },
+    {
+      name: "Tavish Pahuja",
+      role: "Branding & Content Lead",
+      image: "/team-members/Tavish Pahuja.jpg"
+    },
+    {
+      name: "Sri Lakshmi Anbarasan",
+      role: "Data Systems Intern",
+      image: "/team-members/Sri Lakshmi Anbarasan.jpg"
+    },
+    {
+      name: "Arnav Devgan",
+      role: "Dashboard Developer",
+      image: "/team-members/Arnav Devgan.jpg"
+    },
+    {
+      name: "Ansh Wadhawan",
+      role: "Web Developer",
+      image: "/team-members/Ansh Wadhawan.jpg"
+    },
+    {
+      name: "Abhiram Chandra",
+      role: "Software Developer",
+      image: "/team-members/Abhiram Chandra.jpg"
     }
   ]
 
@@ -156,24 +191,69 @@ export default function AboutPage() {
             A lean team that consists of the brightest minds of India hailing from premier institutions worldwide.
           </p>
 
-          <div className="grid grid-cols-3 gap-8 mb-16">
-            {teamMembers.map((member) => (
-              <div key={member.name} className="neumorphism rounded-xl p-6">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={128}
-                      height={128}
-                      className="rounded-full w-full h-full object-cover"
-                    />
+          <div className="space-y-8 mb-16">
+            {/* First row - 5 members */}
+            <div className="grid grid-cols-5 gap-6">
+              {teamMembers.slice(0, 5).map((member) => (
+                <div key={member.name} className="neumorphism rounded-xl p-6">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={96}
+                        height={96}
+                        className="rounded-full w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
+                    <p className="text-gray-400 text-xs">{member.role}</p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                  <p className="text-gray-400 text-sm">{member.role}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Second row - 6 members */}
+            <div className="grid grid-cols-6 gap-6">
+              {teamMembers.slice(5, 11).map((member) => (
+                <div key={member.name} className="neumorphism rounded-xl p-6">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={96}
+                        height={96}
+                        className="rounded-full w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
+                    <p className="text-gray-400 text-xs">{member.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Third row - 5 members */}
+            <div className="grid grid-cols-5 gap-6">
+              {teamMembers.slice(11, 16).map((member) => (
+                <div key={member.name} className="neumorphism rounded-xl p-6">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={96}
+                        height={96}
+                        className="rounded-full w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
+                    <p className="text-gray-400 text-xs">{member.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="text-center">
