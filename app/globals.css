@@ -81,6 +81,25 @@ html {
   border-color: rgba(239, 68, 68, 0.3);
 }
 
+@keyframes tech-panel-focus {
+  0% {
+    filter: grayscale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0), inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+  35% {
+    filter: grayscale(1);
+    box-shadow: 0 0 70px rgba(255, 255, 255, 0.72), inset 0 0 42px rgba(255, 255, 255, 0.16);
+  }
+  100% {
+    filter: grayscale(0);
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.2), inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.tech-focus-panel {
+  animation: tech-panel-focus 620ms ease-out both;
+}
+
 /* Reduced Neumorphism effects (50% of original) */
 .neumorphism {
   background: linear-gradient(145deg, #151515, #0d0d0d);
