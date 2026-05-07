@@ -74,7 +74,7 @@ export function HeroSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white text-sm font-medium">Atomites forming autonomous structures</p>
+                      <p className="text-white text-sm font-medium">Atomites (version 2.0)</p>
                     </div>
                   </div>
                 </div>
