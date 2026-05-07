@@ -25,25 +25,25 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-white/10 py-12 px-6">
+    <footer className="border-t border-white/10 py-10 px-4 sm:px-6 sm:py-12">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="col-span-2 md:col-span-2">
+            <div className="flex items-center justify-center gap-3 mb-4 md:justify-start">
               <Link href="/" className="flex items-center gap-3">
                 <Image src="/logo.png" alt="ASRobotix Logo" width={40} height={40} className="rounded-full" />
                 <span className="font-medium text-white">ASRobotix</span>
               </Link>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-center text-sm leading-6 text-gray-400 mb-6 md:text-left md:text-base">
               Pioneering the future of collaborative robotics with breakthrough Atomite technology.
             </p>
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-3 md:justify-start">
               <Link
                 href="https://www.linkedin.com/company/asrobotix/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition-colors hover:text-white"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
@@ -51,7 +51,7 @@ export function Footer() {
                 href="https://www.instagram.com/asrobotix?igsh=MzRlODBiNWFlZA=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition-colors hover:text-white"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
@@ -59,13 +59,13 @@ export function Footer() {
                 href="https://www.facebook.com/asrobotixfb/?_rdr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition-colors hover:text-white"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="mailto:Info@asrobotix.com"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-400 transition-colors hover:text-white"
               >
                 <Mail className="h-5 w-5" />
               </Link>
@@ -74,7 +74,7 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4">Technology</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3 text-sm sm:text-base">
               <li>
                 <Link href="/minirobots" className="text-gray-400 hover:text-white">
                   Atomites
@@ -98,7 +98,7 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3 text-sm sm:text-base">
               <li>
                 <Link href="/about" className="text-gray-400 hover:text-white">
                   Team
@@ -129,7 +129,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-white/10 mt-10 pt-6 text-center text-gray-400 text-xs leading-6 sm:mt-12 sm:pt-8 sm:text-sm">
           <p>
             © {new Date().getFullYear()} ASRobotix. All rights reserved. | Pioneering the future of collaborative
             robotics.

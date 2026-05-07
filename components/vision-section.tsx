@@ -30,9 +30,9 @@ export function VisionSection() {
   ]
 
   return (
-    <section id="vision" className="py-16 px-4 sm:px-6 bg-black/50">
+    <section id="vision" className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Vision for the Future</h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-sm sm:text-base">
             We envision a future where swarms of intelligent Atomites revolutionize industries, from disaster response
@@ -41,19 +41,19 @@ export function VisionSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 mb-10 sm:mb-12">
           {visionAreas.map((area) => (
             <ShineBorder key={area.title} className="h-full" borderClassName="border border-white/10 rounded-xl">
-              <div className="p-6 h-full card-hover border-hover">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-white/5">{area.icon}</div>
+              <div className="p-5 sm:p-6 h-full card-hover border-hover">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="p-3 rounded-full bg-white/5 shrink-0">{area.icon}</div>
                   <div>
                     <h3
                       className={`text-xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${area.color}`}
                     >
                       {area.title}
                     </h3>
-                    <p className="text-gray-400">{area.description}</p>
+                    <p className="text-gray-400 text-sm leading-6 sm:text-base">{area.description}</p>
                   </div>
                 </div>
               </div>
@@ -62,11 +62,11 @@ export function VisionSection() {
         </div>
 
         <ShineBorder className="text-center" borderClassName="border border-white/10 rounded-xl">
-          <div className="p-8">
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
+          <div className="p-6 sm:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
               Scaling for Tomorrow
             </h3>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-6 sm:text-base">
               Looking ahead, we plan to scale this technology to enable larger, more complex formations and develop
               advanced coordination strategies. We aim to create systems that can adapt, learn, and evolve to meet the
               challenges of tomorrow.

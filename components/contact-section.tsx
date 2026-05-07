@@ -11,9 +11,9 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6">
+    <section id="contact" className="py-12 px-4 sm:px-6 sm:py-16">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             Interested in collaborating or learning more about our breakthrough robotics technology? We'd love to hear
@@ -21,22 +21,22 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 mb-10 sm:mb-12">
           <Link href="mailto:Info@asrobotix.com">
             <ShineBorder className="text-center" borderClassName="border border-white/10 rounded-xl">
-              <div className="p-6 card-hover border-hover cursor-pointer">
+              <div className="p-5 sm:p-6 card-hover border-hover cursor-pointer">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
                   <Mail className="h-6 w-6 text-red-500" />
                 </div>
                 <h3 className="font-semibold mb-2">Email Us</h3>
-                <p className="text-gray-400 text-sm">Info@asrobotix.com</p>
+                <p className="text-gray-400 text-sm break-all">Info@asrobotix.com</p>
               </div>
             </ShineBorder>
           </Link>
 
           <Link href="https://wa.me/919821657500" target="_blank" rel="noopener noreferrer">
             <ShineBorder className="text-center" borderClassName="border border-white/10 rounded-xl">
-              <div className="p-6 card-hover border-hover cursor-pointer">
+              <div className="p-5 sm:p-6 card-hover border-hover cursor-pointer">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-orange-500/20 flex items-center justify-center">
                   <MessageSquare className="h-6 w-6 text-orange-500" />
                 </div>
@@ -48,7 +48,7 @@ export function ContactSection() {
 
           <Link href="tel:+919821657500">
             <ShineBorder className="text-center" borderClassName="border border-white/10 rounded-xl">
-              <div className="p-6 card-hover border-hover cursor-pointer">
+              <div className="p-5 sm:p-6 card-hover border-hover cursor-pointer">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-yellow-500/20 flex items-center justify-center">
                   <Phone className="h-6 w-6 text-yellow-500" />
                 </div>
@@ -60,9 +60,9 @@ export function ContactSection() {
         </div>
 
         <ShineBorder className="text-center" borderClassName="border border-white/10 rounded-xl">
-          <div className="p-8">
+          <div className="p-6 sm:p-8">
             <h3 className="text-xl font-semibold mb-4">Ready to Innovate Together?</h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-2 text-sm leading-6 sm:text-base">
               Whether you're interested in partnerships, investments, or just want to learn more about our technology,
               
               we're excited to connect with fellow innovators.

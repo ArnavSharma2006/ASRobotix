@@ -222,17 +222,17 @@ export function TechnologySection() {
   }, [hasTechnologyBeenSelected])
 
   return (
-    <section id="technology" className="py-16 px-4 sm:px-6">
+    <section id="technology" className="py-12 px-4 sm:px-6 sm:py-16">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
           Revolutionary Technology
         </h2>
-        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto text-sm sm:mb-12 sm:text-base">
           Our breakthrough approach combines miniaturization, artificial intelligence, and swarm robotics to create
           machines that think and collaborate like never before.
         </p>
         <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10">
             {technologyOrder.map((technologyIndex, slotIndex) => {
               const tech = technologies[technologyIndex]
 
@@ -249,7 +249,7 @@ export function TechnologySection() {
                     setSelectedTechnologyIndex(technologyIndex)
                   }}
                   style={isAssemblyActive ? { animationDelay: `${slotIndex * 120}ms` } : undefined}
-                  className={`neumorphism group relative overflow-hidden rounded-xl p-6 text-left outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
+                  className={`neumorphism group relative overflow-hidden rounded-xl p-5 text-left outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:p-6 ${
                     isAssemblyActive ? "tech-assembly-card" : ""
                   } ${
                     selectedTechnology && selectedTechnology.title !== tech.title
@@ -273,7 +273,7 @@ export function TechnologySection() {
 
           {selectedTechnology && (
             <div
-              className={`tech-focus-panel absolute left-1/2 top-1/2 z-20 w-[min(92%,520px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-white/20 bg-black/85 p-5 shadow-[0_0_45px_rgba(255,255,255,0.2)] backdrop-blur-md sm:p-6 ${panelPositionClass}`}
+              className={`tech-focus-panel relative z-20 mt-5 w-full overflow-hidden rounded-xl border border-white/20 bg-black/85 p-5 shadow-[0_0_45px_rgba(255,255,255,0.2)] backdrop-blur-md sm:p-6 lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:w-[min(92%,520px)] lg:-translate-x-1/2 lg:-translate-y-1/2 ${panelPositionClass}`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>

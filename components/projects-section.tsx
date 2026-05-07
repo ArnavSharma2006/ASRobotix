@@ -39,30 +39,30 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-16 px-4 sm:px-6 bg-black/50">
+    <section id="projects" className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Breakthrough Projects</h2>
-        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto text-sm sm:mb-12 sm:text-base">
           Our innovative projects are pushing the boundaries of robotics, from smart waste management to collaborative
           Atomite swarms.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project) => (
             <ShineBorder key={project.title} className="h-full relative" borderClassName="border border-white/10 rounded-xl">
-              <div className="p-6 sm:p-8 h-full card-hover border-hover">
-                <div className="space-y-6">
+              <div className="p-4 sm:p-8 h-full card-hover border-hover">
+                <div className="space-y-5 sm:space-y-6">
                   <div className="relative">
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       width={400}
                       height={250}
-                      className="rounded-xl w-full h-48 object-cover"
+                      className="rounded-xl w-full h-44 object-cover sm:h-48"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
                     {project.patentNumber && (
-                      <div className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-yellow-500/20 rounded-full backdrop-blur-sm">
+                      <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-yellow-500/20 rounded-full backdrop-blur-sm sm:top-4 sm:right-4">
                         <Award className="h-3 w-3 text-yellow-500" />
                         <span className="text-xs text-yellow-500">Patent</span>
                       </div>
@@ -76,9 +76,9 @@ export function ProjectsSection() {
                     >
                       {project.subtitle}
                     </p>
-                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <p className="text-gray-400 mb-4 text-sm leading-6 sm:text-base">{project.description}</p>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-center gap-2">
                         <div
                           className={`w-2 h-2 rounded-full ${project.status === "Patent Published" ? "bg-orange-500" : "bg-red-500"}`}

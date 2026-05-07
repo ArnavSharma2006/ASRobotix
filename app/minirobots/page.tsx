@@ -4,10 +4,11 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ShineBorder } from "@/components/ui/shine-border"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Cpu, Network, Brain, Zap } from "lucide-react"
+import { ArrowLeft, Cpu, Network, Brain, Zap, Search, Hammer, HeartPulse, Leaf } from "lucide-react"
 import { InteractiveGrid } from "@/components/ui/interactive-grid"
 import Image from "next/image"
 import Link from "next/link"
+import type { ReactNode } from "react"
 
 export default function MiniRobotsPage() {
   const capabilities = [
@@ -56,6 +57,13 @@ export default function MiniRobotsPage() {
     },
   ]
 
+  const applicationIcons: Record<string, ReactNode> = {
+    "Search & Rescue": <Search className="h-7 w-7 text-red-500" />,
+    "Construction Assembly": <Hammer className="h-7 w-7 text-orange-500" />,
+    "Medical Applications": <HeartPulse className="h-7 w-7 text-yellow-500" />,
+    "Environmental Monitoring": <Leaf className="h-7 w-7 text-red-500" />,
+  }
+
   const specifications = [
     { label: "Size", value: "Eraser-sized (approx. 2cm³)" },
     { label: "Weight", value: "< 5 grams" },
@@ -90,7 +98,7 @@ export default function MiniRobotsPage() {
           <Header />
 
           {/* Hero Section */}
-          <section className="pt-32 pb-16 px-4 sm:px-6 bg-gradient-to-b from-black via-black/95 to-black/90">
+          <section className="pt-28 pb-12 px-4 sm:px-6 sm:pt-32 sm:pb-16 bg-gradient-to-b from-black via-black/95 to-black/90">
             <div className="max-w-6xl mx-auto">
               <Link
                 href="/"
@@ -100,33 +108,33 @@ export default function MiniRobotsPage() {
                 Back to Home
               </Link>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <h1 className="text-4xl sm:text-5xl font-bold">Atomites</h1>
+                  <div className="flex flex-col items-start gap-3 mb-4 sm:flex-row sm:items-center">
+                    <h1 className="text-3xl sm:text-5xl font-bold">Atomites</h1>
                     <div className="flex items-center gap-1 px-3 py-1 bg-red-500/20 rounded-full">
                       <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                       <span className="text-sm text-red-500 font-medium">Active Development</span>
                     </div>
                   </div>
-                  <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500 mb-6">
+                  <p className="text-lg sm:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500 mb-5 sm:mb-6">
                     Collaborative Atomite Swarms
                   </p>
-                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                  <p className="text-gray-400 text-base sm:text-lg mb-7 sm:mb-8 leading-relaxed">
                     Our Atomites represent a breakthrough in collaborative robotics. These eraser-sized autonomous robots
                     can communicate with each other and form adaptable shapes and structures. They move unpredictably
                     without wheels or complicated commands, relying on elegant design and teamwork.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
-                      className="bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90"
+                      className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 sm:w-auto"
                       onClick={handleJoinResearch}
                     >
                       Join Research Program
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-white/10 bg-white/5 hover:bg-white/10"
+                      className="w-full border-white/10 bg-white/5 hover:bg-white/10 sm:w-auto"
                       onClick={handleTechnicalDocs}
                     >
                       Technical Documentation
@@ -140,7 +148,7 @@ export default function MiniRobotsPage() {
                     alt="Atomites Collaborative Swarm"
                     width={600}
                     height={500}
-                    className="rounded-xl w-full"
+                    className="rounded-xl w-full max-h-[420px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl" />
                 </div>
@@ -149,17 +157,17 @@ export default function MiniRobotsPage() {
           </section>
 
           {/* Core Capabilities */}
-          <section className="py-16 px-4 sm:px-6 bg-black/50">
+          <section className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Core Capabilities</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">Core Capabilities</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
                 {capabilities.map((capability) => (
                   <ShineBorder
                     key={capability.title}
                     className="h-full"
                     borderClassName="border border-white/10 rounded-xl"
                   >
-                    <div className="p-6 text-center">
+                    <div className="p-5 text-center sm:p-6">
                       <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center">
                         {capability.icon}
                       </div>
@@ -173,12 +181,12 @@ export default function MiniRobotsPage() {
           </section>
 
           {/* How It Works */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">How Atomites Work</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">How Atomites Work</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-6">Revolutionary Design Principles</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-6">Revolutionary Design Principles</h3>
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0 mt-1">
@@ -251,18 +259,20 @@ export default function MiniRobotsPage() {
           </section>
 
           {/* Applications */}
-          <section className="py-16 px-4 sm:px-6 bg-black/50">
+          <section className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Future Applications</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">Future Applications</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
                 {applications.map((app) => (
                   <ShineBorder key={app.title} className="h-full" borderClassName="border border-white/10 rounded-xl">
-                    <div className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="text-3xl">{app.icon}</div>
+                    <div className="p-5 sm:p-6">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/5">
+                          {applicationIcons[app.title]}
+                        </div>
                         <div>
                           <h3 className="text-xl font-semibold mb-2">{app.title}</h3>
-                          <p className="text-gray-400">{app.description}</p>
+                          <p className="text-gray-400 text-sm leading-6 sm:text-base">{app.description}</p>
                         </div>
                       </div>
                     </div>
@@ -273,10 +283,10 @@ export default function MiniRobotsPage() {
           </section>
 
           {/* Research Status */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-4xl mx-auto text-center">
               <ShineBorder borderClassName="border border-red-500/30 rounded-xl">
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
                     <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
                   </div>
@@ -306,7 +316,7 @@ export default function MiniRobotsPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Join the Future of Robotics</h2>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -315,14 +325,14 @@ export default function MiniRobotsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  className="bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90"
+                  className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 sm:w-auto"
                   onClick={handleContactResearch}
                 >
                   Contact Research Team
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white/10 bg-white/5 hover:bg-white/10"
+                  className="w-full border-white/10 bg-white/5 hover:bg-white/10 sm:w-auto"
                   onClick={handleResearchCollaboration}
                 >
                   Research Collaboration

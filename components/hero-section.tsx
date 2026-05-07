@@ -26,33 +26,33 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen pt-24 sm:pt-32 pb-16 overflow-hidden bg-black hero-gradient">
+      <section className="relative min-h-[100svh] overflow-hidden bg-black hero-gradient pb-12 pt-24 sm:pb-16 sm:pt-32">
         <InteractiveGrid containerClassName="absolute inset-0" className="opacity-30" points={40} />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+          <div className="text-center mb-10 sm:mb-16">
+            <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold mb-5 tracking-tight leading-[1.05] sm:mb-6">
               Tiny Robots That
               <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
                 Think & Collaborate
               </span>
             </h1>
-            <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-3xl mx-auto px-4">
+            <p className="text-gray-400 text-base sm:text-lg mb-7 max-w-3xl mx-auto sm:px-4 leading-relaxed">
               Our Atomites can roll and connect from any side, forming shapes and structures without human
               intervention. They move unpredictably, without wheels or complicated commands, relying on simple, elegant
               design and teamwork.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:px-4">
               <Button
                 variant="outline"
-                className="gap-2 border-white/10 bg-white/5 hover:bg-white/10"
+                className="w-full gap-2 border-white/10 bg-white/5 hover:bg-white/10 sm:w-auto"
                 onClick={() => window.location.href = '/waitlist'}
               >
                 Join Waitlist
               </Button>
               <Button 
-                className="bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2"
+                className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90 gap-2 sm:w-auto"
                 onClick={scrollToProjects}
               >
                 Explore Projects
@@ -62,8 +62,8 @@ export function HeroSection() {
           </div>
 
           <ShineBorder className="relative mx-auto" borderClassName="border border-white/10 rounded-xl overflow-hidden">
-            <div className="relative bg-black/80 p-4 sm:p-8 rounded-xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="relative bg-black/80 p-3 sm:p-8 rounded-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div className="flex justify-center order-2 lg:order-1">
                   <button
                     type="button"
@@ -89,7 +89,7 @@ export function HeroSection() {
                           />
                           <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
                           <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/15 transition group-hover:ring-orange-300/45" />
-                          <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
+                          <div className="absolute left-3 right-3 top-3 flex items-center justify-between sm:left-4 sm:right-4 sm:top-4">
                             <span className="rounded-full border border-white/15 bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                               Atomites v2.0
                             </span>
@@ -97,15 +97,15 @@ export function HeroSection() {
                               <RotateCw className="h-4 w-4" />
                             </span>
                           </div>
-                          <div className="absolute bottom-4 left-4 right-4">
-                            <p className="text-lg font-semibold text-white drop-shadow">Microbot2 Prototype</p>
+                          <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                            <p className="text-base font-semibold text-white drop-shadow sm:text-lg">Microbot2 Prototype</p>
                             <p className="mt-1 text-sm text-orange-100/90 drop-shadow">
                               Modular movement system built for self-forming robotic structures.
                             </p>
                           </div>
                         </div>
 
-                        <div className="absolute inset-0 rounded-xl border border-orange-300/30 bg-gradient-to-br from-zinc-950 via-zinc-900 to-red-950/80 p-4 shadow-xl shadow-orange-500/15 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-5">
+                        <div className="absolute inset-0 rounded-xl border border-orange-300/30 bg-gradient-to-br from-zinc-950 via-zinc-900 to-red-950/80 p-3 shadow-xl shadow-orange-500/15 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-5">
                           <div className="flex h-full flex-col justify-between gap-4">
                             <div>
                               <div className="mb-3 flex items-center justify-between">
@@ -116,8 +116,8 @@ export function HeroSection() {
                                   Prototype Focus
                                 </span>
                               </div>
-                              <h3 className="text-xl font-semibold text-white sm:text-2xl">Atomites, closer up</h3>
-                              <p className="mt-2 text-sm leading-5 text-gray-300">
+                              <h3 className="text-lg font-semibold text-white sm:text-2xl">Atomites, closer up</h3>
+                              <p className="mt-2 text-xs leading-5 text-gray-300 sm:text-sm">
                                 Microbot2 highlights compact swarm robots that connect, separate, and coordinate
                                 through simple mechanical interactions.
                               </p>

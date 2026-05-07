@@ -8,6 +8,10 @@ html {
   scrollbar-width: thin;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #f97316 #080808;

@@ -156,7 +156,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6">
+      <section className="pt-28 pb-12 px-4 sm:px-6 sm:pt-32 sm:pb-16">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/"
@@ -166,9 +166,9 @@ export default function AboutPage() {
             Back to Home
           </Link>
 
-          <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">About ASRobotix</h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-5xl font-bold mb-5 sm:mb-6">About ASRobotix</h1>
+            <p className="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               A group of robotics enthusiasts taking on breakthrough projects and innovating for the world. Driven by a
               big dream, our small team is committed to changing how we build, explore, and heal, one Atomite at a
               time.
@@ -181,17 +181,17 @@ export default function AboutPage() {
       <section className="py-6 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-center">World-Class Team</h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm leading-6 sm:text-base">
             A lean team that consists of the brightest minds of India hailing from premier institutions worldwide.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-8 mb-12 sm:mb-16">
             {teamMembers.map((member) => {
               const isFlipped = flippedCards[member.name] || false
               return (
                 <div
                   key={member.name}
-                  className="neumorphism rounded-xl p-4 cursor-pointer transition-transform duration-500 hover:scale-105 overflow-hidden h-64"
+                  className="neumorphism mx-auto h-60 w-full max-w-sm cursor-pointer overflow-hidden rounded-xl p-4 transition-transform duration-500 hover:scale-105 sm:h-64 sm:max-w-none"
                   style={{ perspective: '1000px' }}
                   onClick={() => setFlippedCards(prev => ({ ...prev, [member.name]: !prev[member.name] }))}
                 >
@@ -243,10 +243,10 @@ export default function AboutPage() {
 
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-8">Members from Top Institutes</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-6">
               {institutions.map((institution) => (
-                <div key={institution.name} className="neumorphism rounded-xl p-4 text-center card-hover hover:scale-105 transition-transform">
-                  <div className="h-16 flex items-center justify-center mb-3">
+                <div key={institution.name} className="neumorphism rounded-xl p-3 text-center card-hover hover:scale-105 transition-transform sm:p-4">
+                  <div className="h-14 sm:h-16 flex items-center justify-center mb-3">
                     <Image
                       src={institution.logo}
                       alt={institution.name}
@@ -256,7 +256,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <h4 className="font-semibold text-sm text-white">{institution.name}</h4>
-                  <p className="text-xs text-gray-400 mt-1">{institution.description}</p>
+                  <p className="text-xs text-gray-400 mt-1 leading-5">{institution.description}</p>
                 </div>
               ))}
             </div>
@@ -265,12 +265,12 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 px-4 sm:px-6 bg-black/50">
+      <section className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
             {values.map((value) => (
-              <div key={value.title} className="neumorphism rounded-xl p-6">
+              <div key={value.title} className="neumorphism rounded-xl p-5 sm:p-6">
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full neumorphism-inset flex items-center justify-center">
                     {value.icon}

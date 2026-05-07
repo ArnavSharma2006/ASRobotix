@@ -71,7 +71,7 @@ export default function MechLidPage() {
           <Header />
 
           {/* Hero Section */}
-          <section className="pt-32 pb-16 px-4 sm:px-6 bg-gradient-to-b from-black via-black/95 to-black/90">
+          <section className="pt-28 pb-12 px-4 sm:px-6 sm:pt-32 sm:pb-16 bg-gradient-to-b from-black via-black/95 to-black/90">
             <div className="max-w-6xl mx-auto">
               <Link
                 href="/"
@@ -81,19 +81,19 @@ export default function MechLidPage() {
                 Back to Home
               </Link>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <h1 className="text-4xl sm:text-5xl font-bold">MechLid</h1>
+                  <div className="flex flex-col items-start gap-3 mb-4 sm:flex-row sm:items-center">
+                    <h1 className="text-3xl sm:text-5xl font-bold">MechLid</h1>
                     <div className="flex items-center gap-1 px-3 py-1 bg-yellow-500/20 rounded-full">
                       <Award className="h-4 w-4 text-yellow-500" />
                       <span className="text-sm text-yellow-500 font-medium">Patent Published</span>
                     </div>
                   </div>
-                  <p className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500 mb-6">
+                  <p className="text-lg sm:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500 mb-5 sm:mb-6">
                     Smart Waste Management System
                   </p>
-                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                  <p className="text-gray-400 text-base sm:text-lg mb-7 sm:mb-8 leading-relaxed">
                     MechLid revolutionizes waste management with an automatic smart lid that aids in efficient waste
                     disposal and collection. Our innovative system features automatic lid opening and closing mechanisms
                     with retrofittable technology for versatile use with any existing dustbin.
@@ -105,7 +105,7 @@ export default function MechLidPage() {
                     >
                       Watch Demo
                     </Button>
-                    <a href="/brochure_mechlid.pdf" download="MechLid_Brochure.pdf">
+                    <a href="/brochure_mechlid.pdf" download="MechLid_Brochure.pdf" className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="w-full border-white/10 bg-white/5 hover:bg-white/10"
@@ -122,7 +122,7 @@ export default function MechLidPage() {
                     alt="MechLid Smart Waste Management System"
                     width={600}
                     height={500}
-                    className="rounded-xl w-full"
+                    className="rounded-xl w-full max-h-[420px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl" />
                 </div>
@@ -131,23 +131,23 @@ export default function MechLidPage() {
           </section>
 
           {/* Image Gallery */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold mb-4 text-center">MechLid in Action</h2>
-              <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+              <p className="text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm leading-6 sm:text-base">
                 See our innovative smart waste management system from different angles and in various applications.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
                 <div className="group relative overflow-hidden rounded-xl">
                   <Image
                     src="/Mechlid1.jpg"
                     alt="MechLid Smart Waste Management System - Overview"
                     width={400}
                     height={300}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white font-semibold mb-1">System Overview</h3>
                     <p className="text-gray-300 text-sm">Complete MechLid installation on standard dustbin</p>
                   </div>
@@ -158,10 +158,10 @@ export default function MechLidPage() {
                     alt="MechLid Smart Waste Management System - Technical Details"
                     width={400}
                     height={300}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white font-semibold mb-1">Technical Details</h3>
                     <p className="text-gray-300 text-sm">Close-up view of sensor technology and components</p>
                   </div>
@@ -172,10 +172,10 @@ export default function MechLidPage() {
                     alt="MechLid Smart Waste Management System - Application"
                     width={400}
                     height={300}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white font-semibold mb-1">Real Application</h3>
                     <p className="text-gray-300 text-sm">MechLid deployed in urban environment</p>
                   </div>
@@ -185,13 +185,13 @@ export default function MechLidPage() {
           </section>
 
           {/* Key Features */}
-          <section className="py-16 px-4 sm:px-6 bg-black/50">
+          <section className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">Key Features</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
                 {features.map((feature) => (
                   <ShineBorder key={feature.title} className="h-full" borderClassName="border border-white/10 rounded-xl">
-                    <div className="p-6 text-center">
+                    <div className="p-5 text-center sm:p-6">
                       <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 flex items-center justify-center">
                         {feature.icon}
                       </div>
@@ -205,10 +205,10 @@ export default function MechLidPage() {
           </section>
 
           {/* Detailed Features */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Complete Feature Set</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <h2 className="text-3xl font-bold mb-8 text-center sm:mb-12">Complete Feature Set</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div>
                   <h3 className="text-2xl font-semibold mb-6">Advanced Capabilities</h3>
                   <div className="space-y-4">
@@ -268,10 +268,10 @@ export default function MechLidPage() {
                         {specifications.map((spec) => (
                           <div
                             key={spec.label}
-                            className="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0"
+                          className="flex flex-col gap-1 py-2 border-b border-white/10 last:border-b-0 sm:flex-row sm:items-center sm:justify-between"
                           >
                             <span className="text-gray-400">{spec.label}</span>
-                            <span className="font-medium">{spec.value}</span>
+                            <span className="font-medium sm:text-right">{spec.value}</span>
                           </div>
                         ))}
                       </div>
@@ -283,10 +283,10 @@ export default function MechLidPage() {
           </section>
 
           {/* Patent Information */}
-          <section className="py-16 px-4 sm:px-6 bg-black/50">
+          <section className="py-12 px-4 sm:px-6 sm:py-16 bg-black/50">
             <div className="max-w-4xl mx-auto text-center">
               <ShineBorder borderClassName="border border-yellow-500/30 rounded-xl">
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <Award className="h-8 w-8 text-yellow-500" />
                   </div>
@@ -295,14 +295,14 @@ export default function MechLidPage() {
                     MechLid's innovative technology is protected under patent application, ensuring our unique approach to
                     smart waste management remains at the forefront of the industry.
                   </p>
-                  <p className="text-yellow-500 font-mono text-lg">Patent Application Number: 202311068504</p>
+                  <p className="text-yellow-500 font-mono text-sm break-words sm:text-lg">Patent Application Number: 202311068504</p>
                 </div>
               </ShineBorder>
             </div>
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 px-4 sm:px-6">
+          <section className="py-12 px-4 sm:px-6 sm:py-16">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Transform Waste Management?</h2>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -310,14 +310,14 @@ export default function MechLidPage() {
                 your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="mailto:Info@asrobotix.com?subject=MechLid Sales Inquiry">
+                <Link href="mailto:Info@asrobotix.com?subject=MechLid Sales Inquiry" className="w-full sm:w-auto">
                   <Button
                     className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:opacity-90"
                   >
                     Contact Sales
                   </Button>
                 </Link>
-                <Link href="https://wa.me/919821657500" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/919821657500" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
                     className="w-full border-white/10 bg-white/5 hover:bg-white/10"
