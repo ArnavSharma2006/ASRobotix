@@ -1,11 +1,15 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ShineBorder } from "@/components/ui/shine-border"
-import { ArrowLeft, Users, Target, Lightbulb, Award } from "lucide-react"
+import { ArrowLeft, Users, Target, Lightbulb, Award, Linkedin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function AboutPage() {
+  const [flippedCards, setFlippedCards] = useState<Record<string, boolean>>({})
   const institutions = [
     { 
       name: "IIT Delhi", 
@@ -48,83 +52,73 @@ export default function AboutPage() {
     {
       name: "Arnav Sharma",
       role: "Founder",
-      image: "/team-members/Arnav Sharma.jpg"
+      image: "/team-members/Arnav Sharma.jpg",
+      bio: "Passionate robotics enthusiast leading ASRobotix with a vision to revolutionize automation through innovative micro-robots.",
+      linkedin: "https://linkedin.com/in/arnavsharma-asrobotix"
     },
     {
       name: "Saksham Kamboj",
       role: "Co-Founder",
-      image: "/team-members/Saksham Kamboj.jpg"
+      image: "/team-members/Saksham Kamboj.jpg",
+      bio: "Co-founder driving the technical vision and development of cutting-edge robotics solutions at ASRobotix.",
+      linkedin: "https://linkedin.com/in/saksham-kamboj"
     },
     {
       name: "Ishaan Kesarwani",
       role: "Developer",
-      image: "/team-members/Ishaan kesarwani.png"
+      image: "/team-members/Ishaan kesarwani.png",
+      bio: "Full-stack developer specializing in robotics software and AI integration for autonomous systems.",
+      linkedin: "https://linkedin.com/in/ishaan-kesarwani"
     },
     {
       name: "Taanish Gupta",
       role: "Embedded Systems & Logic Control Engineer",
-      image: "/team-members/Taanish Gupta.jpg"
+      image: "/team-members/Taanish Gupta.jpg",
+      bio: "Expert in embedded systems and control logic, ensuring our robots operate with precision and reliability.",
+      linkedin: "https://linkedin.com/in/taanish-gupta"
     },
     {
       name: "Ridhi Sehgal",
       role: "UI/UX & Graphic Designer",
-      image: "/team-members/Ridhi Sehgal.jpg"
+      image: "/team-members/Ridhi Sehgal.jpg",
+      bio: "Creative designer crafting intuitive user experiences and stunning visuals for our robotics platform.",
+      linkedin: "https://linkedin.com/in/ridhi-sehgal"
     },
     {
       name: "Tanishka Gupta",
       role: "Electronic Systems Developer",
-      image: "/team-members/Tanishka Gupta.png"
+      image: "/team-members/Tanishka Gupta.png",
+      bio: "Electronic systems specialist designing and implementing the hardware backbone of our robotic solutions.",
+      linkedin: "https://linkedin.com/in/tanishka-gupta"
     },
     {
       name: "Kartikay Lakhotia",
       role: "Product development engineer",
-      image: "/team-members/Kartikay Lakhotia.png"
+      image: "/team-members/Kartikay Lakhotia.png",
+      bio: "Product engineer focused on bringing innovative robotics concepts from prototype to production.",
+      linkedin: "https://linkedin.com/in/kartikay-lakhotia "
     },
     {
       name: "Soham Jain",
       role: "Mechanical Systems and Scalability Engineer",
-      image: "/team-members/Soham Jain.jpg"
-    },
-    {
-      name: "Manit Mehta",
-      role: "Mechanical Systems & Design Engineer",
-      image: "/team-members/Manit Mehta.jpg"
-    },
-    {
-      name: "Aakash Bhagat",
-      role: "Investor Relations and Operations",
-      image: "/team-members/Aakash Bhagat.jpg"
-    },
-    {
-      name: "Shashwat Mahalanobis",
-      role: "AI and Data Scientist",
-      image: "/team-members/Shashwat Mahalanobis.jpg"
-    },
-    {
-      name: "Tavish Pahuja",
-      role: "Branding & Content Lead",
-      image: "/team-members/Tavish Pahuja.jpg"
+      image: "/team-members/Soham Jain.jpg",
+      bio: "Mechanical engineer designing scalable robotic systems for real-world applications and mass production.",
+      linkedin: "https://linkedin.com/in/soham-jain"
     },
     {
       name: "Sri Lakshmi Anbarasan",
       role: "Data Systems Intern",
-      image: "/team-members/Sri Lakshmi Anbarasan.jpg"
-    },
-    {
-      name: "Arnav Devgan",
-      role: "Dashboard Developer",
-      image: "/team-members/Arnav Devgan.jpg"
+      image: "/team-members/Sri Lakshmi Anbarasan.jpg",
+      bio: "Data systems intern working on analytics and data processing for robotics performance optimization.",
+      linkedin: "https://linkedin.com/in/sri-lakshmi-anbarasan"
     },
     {
       name: "Ansh Wadhawan",
       role: "Web Developer",
-      image: "/team-members/Ansh Wadhawan.jpg"
+      image: "/team-members/Ansh Wadhawan.jpg",
+      bio: "Web developer building the digital interfaces that connect users with our robotic ecosystem.",
+      linkedin: "https://linkedin.com/in/ansh-wadhawan"
     },
-    {
-      name: "Abhiram Chandra",
-      role: "Software Developer",
-      image: "/team-members/Abhiram Chandra.jpg"
-    }
   ]
 
   const values = [
@@ -191,83 +185,74 @@ export default function AboutPage() {
             A lean team that consists of the brightest minds of India hailing from premier institutions worldwide.
           </p>
 
-          <div className="space-y-8 mb-16">
-            {/* First row - 5 members */}
-            <div className="grid grid-cols-5 gap-6">
-              {teamMembers.slice(0, 5).map((member) => (
-                <div key={member.name} className="neumorphism rounded-xl p-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={96}
-                        height={96}
-                        className="rounded-full w-full h-full object-cover"
-                      />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
+            {teamMembers.map((member) => {
+              const isFlipped = flippedCards[member.name] || false
+              return (
+                <div
+                  key={member.name}
+                  className="neumorphism rounded-xl p-4 cursor-pointer transition-transform duration-500 hover:scale-105 overflow-hidden h-64"
+                  style={{ perspective: '1000px' }}
+                  onClick={() => setFlippedCards(prev => ({ ...prev, [member.name]: !prev[member.name] }))}
+                >
+                  <div
+                    className={`relative w-full h-full transition-transform duration-500`}
+                    style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', height: '100%' }}
+                  >
+                    {/* Front */}
+                    <div className="absolute inset-0 w-full h-full flex items-center justify-center" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+                      <div className="text-center">
+                        <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            width={96}
+                            height={96}
+                            className="rounded-full w-full h-full object-cover"
+                          />
+                        </div>
+                        <h3 className="text-base font-semibold mb-1 truncate">{member.name}</h3>
+                        <p className="text-gray-400 text-xs">{member.role}</p>
+                      </div>
                     </div>
-                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
-                    <p className="text-gray-400 text-xs">{member.role}</p>
+                    {/* Back */}
+                    <div
+                      className="absolute inset-0 w-full h-full flex items-center justify-center p-4"
+                      style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                    >
+                      <div className="text-center flex flex-col justify-center h-full overflow-auto">
+                        <h3 className="text-base font-semibold mb-2 truncate">{member.name}</h3>
+                        <p className="text-gray-300 text-xs mb-4 leading-relaxed max-h-28 overflow-auto">{member.bio}</p>
+                        <Link
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Linkedin className="h-4 w-4" />
+                          LinkedIn
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Second row - 6 members */}
-            <div className="grid grid-cols-6 gap-6">
-              {teamMembers.slice(5, 11).map((member) => (
-                <div key={member.name} className="neumorphism rounded-xl p-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={96}
-                        height={96}
-                        className="rounded-full w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
-                    <p className="text-gray-400 text-xs">{member.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Third row - 5 members */}
-            <div className="grid grid-cols-5 gap-6">
-              {teamMembers.slice(11, 16).map((member) => (
-                <div key={member.name} className="neumorphism rounded-xl p-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={96}
-                        height={96}
-                        className="rounded-full w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-base font-semibold mb-1">{member.name}</h3>
-                    <p className="text-gray-400 text-xs">{member.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              )
+            })}
           </div>
 
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-8">Members from Top Institutes</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
               {institutions.map((institution) => (
-                <div key={institution.name} className="neumorphism rounded-xl p-4 text-center card-hover">
-                  <div className="h-20 flex items-center justify-center mb-3">
+                <div key={institution.name} className="neumorphism rounded-xl p-4 text-center card-hover hover:scale-105 transition-transform">
+                  <div className="h-16 flex items-center justify-center mb-3">
                     <Image
                       src={institution.logo}
                       alt={institution.name}
                       width={138}
                       height={69}
-                      className="h-14 w-auto object-contain"
+                      className="h-12 w-auto object-contain"
                     />
                   </div>
                   <h4 className="font-semibold text-sm text-white">{institution.name}</h4>
