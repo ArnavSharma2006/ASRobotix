@@ -1,7 +1,28 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { Brain, Cpu, Network, Shield, Wrench, X, Zap } from "lucide-react"
+
+const assemblyCycles = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [0, 3, 4, 1],
+  [1, 4, 5, 2],
+  [0, 1, 4, 3],
+  [1, 2, 5, 4],
+]
+
+function getNextAssemblyOrder(currentOrder: number[]) {
+  const cycle = assemblyCycles[Math.floor(Math.random() * assemblyCycles.length)]
+  const nextOrder = [...currentOrder]
+  const cycleValues = cycle.map((slotIndex) => currentOrder[slotIndex])
+
+  cycle.forEach((slotIndex, cycleIndex) => {
+    nextOrder[slotIndex] = cycleValues[(cycleIndex + cycleValues.length - 1) % cycleValues.length]
+  })
+
+  return nextOrder
+}
 
 export function TechnologySection() {
   const technologies = [
@@ -67,9 +88,18 @@ export function TechnologySection() {
     },
   ]
   const [selectedTechnologyIndex, setSelectedTechnologyIndex] = useState<number | null>(null)
+  const [technologyOrder, setTechnologyOrder] = useState(() => technologies.map((_, index) => index))
+  const [hasTechnologyBeenSelected, setHasTechnologyBeenSelected] = useState(false)
+  const [canAnimateAssembly, setCanAnimateAssembly] = useState(false)
+  const technologyOrderRef = useRef(technologyOrder)
+  const technologyCardRefs = useRef<Record<number, HTMLButtonElement | null>>({})
+  const previousTechnologyRectsRef = useRef<Map<number, DOMRect> | null>(null)
   const selectedTechnology = selectedTechnologyIndex !== null ? technologies[selectedTechnologyIndex] : null
-  const selectedColumn = selectedTechnologyIndex !== null ? selectedTechnologyIndex % 3 : -1
-  const selectedRow = selectedTechnologyIndex !== null ? Math.floor(selectedTechnologyIndex / 3) : -1
+  const selectedTechnologySlot =
+    selectedTechnologyIndex !== null ? technologyOrder.indexOf(selectedTechnologyIndex) : -1
+  const selectedColumn = selectedTechnologySlot !== -1 ? selectedTechnologySlot % 3 : -1
+  const selectedRow = selectedTechnologySlot !== -1 ? Math.floor(selectedTechnologySlot / 3) : -1
+  const isAssemblyActive = canAnimateAssembly && !hasTechnologyBeenSelected && selectedTechnologyIndex === null
   const panelPositionClass =
     selectedColumn === 0
       ? "lg:left-[66.666%] lg:top-1/2"
@@ -78,6 +108,118 @@ export function TechnologySection() {
         : selectedRow === 0
           ? "lg:left-1/2 lg:top-[86%]"
           : "lg:left-1/2 lg:top-[14%]"
+
+  useEffect(() => {
+    technologyOrderRef.current = technologyOrder
+  }, [technologyOrder])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const updateMotionPreference = () => setCanAnimateAssembly(!mediaQuery.matches)
+
+    updateMotionPreference()
+    mediaQuery.addEventListener("change", updateMotionPreference)
+
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference)
+  }, [])
+
+  useEffect(() => {
+    if (!isAssemblyActive) {
+      return
+    }
+
+    const captureTechnologyRects = () => {
+      const rects = new Map<number, DOMRect>()
+
+      technologyOrderRef.current.forEach((technologyIndex) => {
+        const element = technologyCardRefs.current[technologyIndex]
+
+        if (element) {
+          rects.set(technologyIndex, element.getBoundingClientRect())
+        }
+      })
+
+      previousTechnologyRectsRef.current = rects
+
+      return rects
+    }
+
+    const shuffleTechnologies = () => {
+      captureTechnologyRects()
+      setTechnologyOrder((currentOrder) => getNextAssemblyOrder(currentOrder))
+    }
+
+    const firstShuffle = window.setTimeout(shuffleTechnologies, 900)
+    const shuffleInterval = window.setInterval(shuffleTechnologies, 2600)
+
+    return () => {
+      window.clearTimeout(firstShuffle)
+      window.clearInterval(shuffleInterval)
+    }
+  }, [isAssemblyActive])
+
+  useLayoutEffect(() => {
+    const previousRects = previousTechnologyRectsRef.current
+
+    if (!previousRects || !isAssemblyActive) {
+      return
+    }
+
+    previousTechnologyRectsRef.current = null
+    const cleanupTimers: number[] = []
+
+    technologyOrder.forEach((technologyIndex, slotIndex) => {
+      const element = technologyCardRefs.current[technologyIndex]
+      const previousRect = previousRects.get(technologyIndex)
+
+      if (!element || !previousRect) {
+        return
+      }
+
+      const currentRect = element.getBoundingClientRect()
+      const deltaX = previousRect.left - currentRect.left
+      const deltaY = previousRect.top - currentRect.top
+
+      if (Math.abs(deltaX) < 1 && Math.abs(deltaY) < 1) {
+        return
+      }
+
+      const rotation = ((slotIndex % 3) - 1) * 1.4
+
+      element.style.transition = "transform 0s"
+      element.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.98) rotate(${rotation}deg)`
+      element.style.zIndex = "20"
+
+      window.requestAnimationFrame(() => {
+        element.style.transition = "transform 900ms cubic-bezier(0.22, 1, 0.36, 1)"
+        element.style.transform = ""
+      })
+
+      cleanupTimers.push(
+        window.setTimeout(() => {
+          element.style.transition = ""
+          element.style.zIndex = ""
+        }, 950),
+      )
+    })
+
+    return () => cleanupTimers.forEach((timer) => window.clearTimeout(timer))
+  }, [technologyOrder, isAssemblyActive])
+
+  useEffect(() => {
+    if (!hasTechnologyBeenSelected) {
+      return
+    }
+
+    previousTechnologyRectsRef.current = null
+    Object.values(technologyCardRefs.current).forEach((element) => {
+      if (element) {
+        element.style.transition = ""
+        element.style.transform = ""
+        element.style.zIndex = ""
+      }
+    })
+  }, [hasTechnologyBeenSelected])
 
   return (
     <section id="technology" className="py-16 px-4 sm:px-6">
@@ -91,29 +233,42 @@ export function TechnologySection() {
         </p>
         <div className="relative">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {technologies.map((tech, index) => (
-              <button
-                key={tech.title}
-                type="button"
-                aria-pressed={selectedTechnology?.title === tech.title}
-                onClick={() => setSelectedTechnologyIndex(index)}
-                className={`neumorphism group relative rounded-xl p-6 text-left outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
-                  selectedTechnology && selectedTechnology.title !== tech.title
-                    ? "z-0 scale-[0.98] blur-[2px] grayscale opacity-35"
-                    : "z-10"
-                } ${
-                  selectedTechnology?.title === tech.title
-                    ? "z-30 scale-[1.02] grayscale shadow-[0_0_35px_rgba(255,255,255,0.38)] ring-1 ring-white/70"
-                    : "hover:scale-[1.015]"
-                }`}
-              >
-                <div className="flex flex-col items-center text-center h-full">
-                  <div className="mb-4 p-4 rounded-full neumorphism-inset">{tech.icon}</div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">{tech.title}</h3>
-                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{tech.description}</p>
-                </div>
-              </button>
-            ))}
+            {technologyOrder.map((technologyIndex, slotIndex) => {
+              const tech = technologies[technologyIndex]
+
+              return (
+                <button
+                  key={tech.title}
+                  ref={(element) => {
+                    technologyCardRefs.current[technologyIndex] = element
+                  }}
+                  type="button"
+                  aria-pressed={selectedTechnology?.title === tech.title}
+                  onClick={() => {
+                    setHasTechnologyBeenSelected(true)
+                    setSelectedTechnologyIndex(technologyIndex)
+                  }}
+                  style={isAssemblyActive ? { animationDelay: `${slotIndex * 120}ms` } : undefined}
+                  className={`neumorphism group relative overflow-hidden rounded-xl p-6 text-left outline-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
+                    isAssemblyActive ? "tech-assembly-card" : ""
+                  } ${
+                    selectedTechnology && selectedTechnology.title !== tech.title
+                      ? "z-0 scale-[0.98] blur-[2px] grayscale opacity-35"
+                      : "z-10"
+                  } ${
+                    selectedTechnology?.title === tech.title
+                      ? "z-30 scale-[1.02] grayscale shadow-[0_0_35px_rgba(255,255,255,0.38)] ring-1 ring-white/70"
+                      : "hover:scale-[1.015]"
+                  }`}
+                >
+                  <div className="flex flex-col items-center text-center h-full">
+                    <div className="mb-4 p-4 rounded-full neumorphism-inset">{tech.icon}</div>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">{tech.title}</h3>
+                    <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{tech.description}</p>
+                  </div>
+                </button>
+              )
+            })}
           </div>
 
           {selectedTechnology && (

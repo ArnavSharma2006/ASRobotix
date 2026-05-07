@@ -32,9 +32,6 @@ export function Header() {
           <Link href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
             Home
           </Link>
-          <Link href="/mechlid" className="text-sm text-gray-300 hover:text-white transition-colors">
-            MechLid
-          </Link>
           <Link href="/minirobots" className="text-sm text-gray-300 hover:text-white transition-colors">
             Atomites
           </Link>
@@ -81,13 +78,6 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link
-              href="/mechlid"
-              className="text-gray-300 hover:text-white transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              MechLid
             </Link>
             <Link
               href="/minirobots"
