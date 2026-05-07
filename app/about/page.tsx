@@ -53,7 +53,7 @@ export default function AboutPage() {
       name: "Arnav Sharma",
       role: "Founder",
       image: "/team-members/Arnav Sharma.jpg",
-      bio: "Passionate robotics enthusiast leading ASRobotix with a vision to revolutionize automation through innovative micro-robots.",
+      bio: "Robotics enthusiast leading ASRobotix with a vision to revolutionize disaster response.",
       linkedin: "https://linkedin.com/in/arnavsharma-asrobotix"
     },
     {
