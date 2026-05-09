@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "ASRobotix - Pioneering Collaborative Atomite Technology",
   description:
-    "Creating tiny robots that think and collaborate. Building the future of autonomous robotics, one Atomite at a time.",
+    "Building robots that think and collaborate. Building the future of autonomous robotics, one Atomite at a time.",
     generator: 'v0.dev'
 }
 
